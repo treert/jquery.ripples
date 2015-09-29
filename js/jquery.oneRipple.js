@@ -113,6 +113,14 @@
             }
         });
 
+        this.canvas.addEventListener('touchstart', function(e){
+            if (that.alive && that.running) that.dropAtMouse(e.touches[0], that.dropRadius * 1.5, 0.14);
+        });
+
+        this.canvas.addEventListener('touchmove', function(e){
+            if (that.alive && that.running) that.dropAtMouse(e.touches[0], that.dropRadius, 0.01);
+        });
+
         this.textures = [];
         this.framebuffers = [];
 
